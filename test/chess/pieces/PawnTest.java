@@ -13,6 +13,8 @@ import static org.junit.Assert.*;
  */
 public class PawnTest {
 
+    private Pawn instance;
+
     public PawnTest() {
     }
 
@@ -26,6 +28,7 @@ public class PawnTest {
 
     @Before
     public void setUp() {
+        instance = new Pawn();
     }
 
     @After
@@ -37,13 +40,24 @@ public class PawnTest {
      */
     @Test
     public void testGetColor() {
-        System.out.println("getColor");
-        Pawn instance = new Pawn();
-        String expResult = "";
+
+        instance = new Pawn("black");
+        String expResult = "black";
         String result = instance.getColor();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+    }
+
+    @Test
+    public void testPawnRepresentation() {
+        instance = new Pawn("black","P");        
+        assertEquals(instance.getRepresentation(), "P");
+        
+        instance = new Pawn("white", "p");
+        assertEquals(instance.getRepresentation(), "p");
+        
+        
+        
     }
 
 }
