@@ -1,4 +1,4 @@
-package com.project.model;
+package chess.pieces;
 
 /**
  *
@@ -9,7 +9,7 @@ public class Pawn {
     private String color;
     final String whitePawnColor = "white";
     final String blackPawnColor = "black";
-
+    
     public Pawn() {
 
     }

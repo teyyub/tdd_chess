@@ -1,4 +1,6 @@
-package com.project.model;
+package chess.board;
+
+import chess.pieces.Pawn;
 
 /**
  *
