@@ -10,6 +10,6 @@ public class Pawn {
 
     @Test
     void testCreate() {
-        fail("init testCreate");
+         Pawn pawn = new Pawn();
     }
 }
