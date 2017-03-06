@@ -11,7 +11,11 @@ public class CharacterTest {
 
     @Test
     public void testWhiteSpace() {
-       Character ch = new Character("\n");
-       assertEquals(true,ch.isWhitespace());
+       Character ch = new Character();
+       assertEquals(false,ch.isWhitespace("n"));
+       assertEquals(false,ch.isWhitespace("123n"));
+       assertEquals(true,ch.isWhitespace("\n"));
+       assertEquals(true,ch.isWhitespace("\t"));
+       assertEquals(true,ch.isWhitespace(" "));
     }
 }
