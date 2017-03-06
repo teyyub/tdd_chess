@@ -10,7 +10,8 @@ public class Board {
 
     private byte pieces = 0;
     private byte pawnCount = 0;
-
+    private byte initPieces = 16;
+            
     public void addPawn(Pawn pawn) {
         pawnCount += 1;
     }
@@ -22,4 +23,9 @@ public class Board {
     public byte getPawnCount() {
      return pawnCount;
     }
+
+    public byte getInitPieces() {
+        return initPieces;
+    }
+    
 }

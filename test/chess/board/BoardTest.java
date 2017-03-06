@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  * @author teyyub 4:56:45 PM
  */
 public class BoardTest {
-
+    private  Board instance ;
     public BoardTest() {
     }
 
@@ -27,6 +27,7 @@ public class BoardTest {
 
     @Before
     public void setUp() {
+        instance = new Board();
     }
 
     @After
@@ -39,17 +40,15 @@ public class BoardTest {
     @Test
     public void testAddPawn() {
      
-        Pawn pawn = new Pawn("white");
-        Board instance = new Board();
-        instance.addPawn(pawn);
-//        instance.addPawn(new Integer("7"));
-        // TODO review the generated test code and remove the default call to fail.
-        assertEquals(1,instance.getPawnCount());
+       
+       
+        
     }
 
-    /**
-     * Test of getPieces method, of class Board.
-     */
+    @Test
+    public void testBoardInit(){
+        assertEquals(16, instance.getInitPieces());
+    }
     
 
 }
