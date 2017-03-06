@@ -1,4 +1,5 @@
 
+import com.project.model.Board;
 import com.project.model.Pawn;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -24,5 +25,11 @@ public class PawnTest {
          
          assertEquals(blackPawn.getColor(), blackPawnColor);
                  
+    }
+    
+    @Test
+    public void testCreateBoard(){
+        Board board = new Board();
+        assertEquals(board.getPieces(), 0);
     }
 }
