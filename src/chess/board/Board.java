@@ -15,7 +15,8 @@ public class Board {
     private byte initPieces = 16;
     private List<Pawn> pawns = new LinkedList<>();
     private String board;
-    
+    final static String NEW_LINE = System.getProperty("line.separator");
+
     public void addPawn(Pawn pawn) {
         pawnCount += 1;
     }
@@ -25,32 +26,32 @@ public class Board {
     }
 
     public byte getPawnCount() {
-     return pawnCount;
+        return pawnCount;
     }
 
     public byte getInitPieces() {
         return initPieces;
     }
-    public void initialize(){
-        
-        board = "........\n"+
-                 "PPPPPPPP\n"+
-                 "........\n"+
-                 "........\n"+
-                 "........\n"+
-                 "........\n"+
-                 "pppppppp\n"+
-                 "........\n";
- 
+
+    public void initialize() {
+
+        board =   "........" + NEW_LINE
+                + "PPPPPPPP" + NEW_LINE
+                + "........" + NEW_LINE
+                + "........" + NEW_LINE
+                + "........" + NEW_LINE
+                + "........" + NEW_LINE
+                + "pppppppp" + NEW_LINE
+                + "........";
+
     }
-  
-    public String printBoard(){
+
+    public String printBoard() {
         return board;
     }
-    
+
     public List<Pawn> getPawns() {
         return pawns;
     }
-    
-    
+
 }

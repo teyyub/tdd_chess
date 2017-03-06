@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
  */
 public class BoardTest {
     private  Board instance ;
+    private Board board;
     private Pawn whitePawn;
     private Pawn blackPawn;
     private Pawn noPawn;
@@ -31,7 +32,7 @@ public class BoardTest {
     @Before
     public void setUp() {
         instance = new Board();
-        
+        board = new Board();
     }
 
     @After
@@ -43,10 +44,7 @@ public class BoardTest {
      */
     @Test
     public void testAddPawn() {
-     
-       
-       
-        
+  
     }
 
     @Test
@@ -56,19 +54,32 @@ public class BoardTest {
     
     @Test
     public void testInitBoard(){
+         
         
-         instance.initialize();
-         String blankRank = "........\n";
-         String sevenRank = "PPPPPPPP\n";
-         String secondRank = "pppppppp\n";
-         assertEquals(instance.printBoard(),blankRank+
-                      sevenRank+
-                      blankRank+
-                      blankRank+
-                      blankRank+
-                      blankRank+
-                      secondRank+
+        
+         board.initialize();
+       
+         String blankRank = "........";
+         String sevenRank = "PPPPPPPP";
+         String secondRank = "pppppppp";
+         assertEquals(instance.printBoard(),
+                      blankRank+Board.NEW_LINE+
+                      sevenRank+Board.NEW_LINE+
+                      blankRank+Board.NEW_LINE+
+                      blankRank+Board.NEW_LINE+
+                      blankRank+Board.NEW_LINE+
+                      blankRank+Board.NEW_LINE+
+                      secondRank+Board.NEW_LINE+
                       blankRank);
     }
-
+  @Test
+  public void testNewLine(){
+//      String exp = "A\nB";
+//      System.out.println(exp);
+//      String a= "a"+"\r\n"+"b";
+//      System.out.println(a);
+////      System.out.println("A\nB");
+//      
+//      assertEquals("A"+Board.NEW_LINE+"B","A"+"\n"+"B");
+  }
 }
