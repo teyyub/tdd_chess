@@ -27,9 +27,5 @@ public class PawnTest {
                  
     }
     
-    @Test
-    public void testCreateBoard(){
-        Board board = new Board();
-        assertEquals(board.getPieces(), 0);
-    }
+   
 }
