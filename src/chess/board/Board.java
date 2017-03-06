@@ -1,6 +1,8 @@
 package chess.board;
 
 import chess.pieces.Pawn;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -11,7 +13,9 @@ public class Board {
     private byte pieces = 0;
     private byte pawnCount = 0;
     private byte initPieces = 16;
-            
+    private List<Pawn> pawns = new LinkedList<>();
+    private String board;
+    
     public void addPawn(Pawn pawn) {
         pawnCount += 1;
     }
@@ -27,5 +31,26 @@ public class Board {
     public byte getInitPieces() {
         return initPieces;
     }
+    public void initialize(){
+        
+        board = "........\n"+
+                 "PPPPPPPP\n"+
+                 "........\n"+
+                 "........\n"+
+                 "........\n"+
+                 "........\n"+
+                 "pppppppp\n"+
+                 "........\n";
+ 
+    }
+  
+    public String printBoard(){
+        return board;
+    }
+    
+    public List<Pawn> getPawns() {
+        return pawns;
+    }
+    
     
 }

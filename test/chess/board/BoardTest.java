@@ -14,6 +14,9 @@ import static org.junit.Assert.*;
  */
 public class BoardTest {
     private  Board instance ;
+    private Pawn whitePawn;
+    private Pawn blackPawn;
+    private Pawn noPawn;
     public BoardTest() {
     }
 
@@ -28,6 +31,7 @@ public class BoardTest {
     @Before
     public void setUp() {
         instance = new Board();
+        
     }
 
     @After
@@ -50,5 +54,21 @@ public class BoardTest {
         assertEquals(16, instance.getInitPieces());
     }
     
+    @Test
+    public void testInitBoard(){
+        
+         instance.initialize();
+         String blankRank = "........\n";
+         String sevenRank = "PPPPPPPP\n";
+         String secondRank = "pppppppp\n";
+         assertEquals(instance.printBoard(),blankRank+
+                      sevenRank+
+                      blankRank+
+                      blankRank+
+                      blankRank+
+                      blankRank+
+                      secondRank+
+                      blankRank);
+    }
 
 }
