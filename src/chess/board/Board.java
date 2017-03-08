@@ -3,6 +3,7 @@ package chess.board;
 import chess.pieces.Pawn;
 import java.util.LinkedList;
 import java.util.List;
+import utils.StringUtil.StringUtil;
 
 /**
  *
@@ -15,7 +16,7 @@ public class Board {
     private byte initPieces = 16;
     private List<Pawn> pawns = new LinkedList<>();
     private String board;
-    final static String NEW_LINE = System.getProperty("line.separator");
+   
 
     public void addPawn(Pawn pawn) {
         pawnCount += 1;
@@ -35,14 +36,14 @@ public class Board {
 
     public void initialize() {
 
-        board =   "........" + NEW_LINE
-                + "PPPPPPPP" + NEW_LINE
-                + "........" + NEW_LINE
-                + "........" + NEW_LINE
-                + "........" + NEW_LINE
-                + "........" + NEW_LINE
-                + "pppppppp" + NEW_LINE
-                + "........";
+           board =  StringUtil.appendNewLine("RNBQKBNR")+  
+                  StringUtil.appendNewLine("PPPPPPPP")  
+                + StringUtil.appendNewLine("........")   
+                + StringUtil.appendNewLine("........")  
+                + StringUtil.appendNewLine("........")  
+                + StringUtil.appendNewLine("........") 
+                + StringUtil.appendNewLine("pppppppp") 
+                + StringUtil.appendNewLine("rnbqkbnr");
 
     }
 
