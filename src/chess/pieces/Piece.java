@@ -12,7 +12,9 @@ public class Piece {
     private char representation;
     private Type type;
     private String color;
-
+    private boolean isWhite;
+    private boolean isBlack;
+    
     public final static char PAWN_REPRESENTATION = 'p';
     public final static char ROOK_REPRESENTATION = 'r';
     public final static char KNIGHT_REPRESENTATION = 'n';
@@ -115,54 +117,66 @@ public class Piece {
             if (t == Type.PAWN) {
                 this.representation = PAWN_REPRESENTATION;
                 this.type = t;
+                this.isWhite=true;
             }
             if (t == Type.BISHOP) {
                 this.representation = BISHOP_REPRESENTATION;
                 this.type = t;
+                this.isWhite=true;
             }
             if (t == Type.KNIGHT) {
                 this.representation = KNIGHT_REPRESENTATION;
                 this.type = t;
+                this.isWhite=true;
             }
             if (t == Type.QUEEN) {
                 this.representation = QUEEN_REPRESENTATION;
                 this.type = t;
+                this.isWhite=true;
             }
 
             if (t == Type.ROOK) {
                 this.representation = ROOK_REPRESENTATION;
                 this.type = t;
+                this.isWhite=true;
             }
             if (t == Type.KING) {
                 this.representation = KING_REPRESENTATION;
                 this.type = t;
+                this.isWhite=true;
             }
 
         } else {
             if (t == Type.PAWN) {
                 this.representation = Character.toUpperCase(PAWN_REPRESENTATION);
                 this.type = t;
+                this.isBlack=true;
             }
             if (t == Type.BISHOP) {
                 this.representation = Character.toUpperCase(BISHOP_REPRESENTATION);
                 this.type = t;
+                this.isBlack=true;
             }
             if (t == Type.KNIGHT) {
                 this.representation = Character.toUpperCase(KNIGHT_REPRESENTATION);
                 this.type = t;
+                this.isBlack=true;
             }
             if (t == Type.QUEEN) {
                 this.representation = Character.toUpperCase(QUEEN_REPRESENTATION);
                 this.type = t;
+                this.isBlack=true;
             }
 
             if (t == Type.ROOK) {
                 this.representation = Character.toUpperCase(ROOK_REPRESENTATION);
                 this.type = t;
+                this.isBlack=true;
             }
             if (t == Type.KING) {
                 this.representation = Character.toUpperCase(KING_REPRESENTATION);
                 this.type = t;
+                this.isBlack=true;
             }
         }
 
@@ -196,11 +210,10 @@ public class Piece {
     }
 
     public boolean isWhite() {        
-        return true;
+        return isWhite;
     }
 
     public boolean isBlack() {
-
-        return true;
+        return isBlack;
     }
 }

@@ -1,6 +1,7 @@
 package chess.board;
 
 import chess.pieces.Pawn;
+import chess.pieces.Piece;
 import java.util.LinkedList;
 import java.util.List;
 import utils.StringUtil.StringUtil;
@@ -11,19 +12,50 @@ import utils.StringUtil.StringUtil;
  */
 public class Board {
 
-    private byte pieces = 0;
+//    private byte pieces = 0;
     private byte pawnCount = 0;
+    private int pieceCount;
+    private int whitePieceCount = 0;
+    private int blackPieceCount = 0;
     private byte initPieces = 16;
     private List<Pawn> pawns = new LinkedList<>();
     private String board;
-   
+    private List<Piece> pieces = new LinkedList();
 
     public void addPawn(Pawn pawn) {
         pawnCount += 1;
     }
 
-    public byte getPieces() {
+    public void addPiece(Piece piece) {
+        pieces.add(piece);
+    }
+
+    public List<Piece> getPieces() {
         return pieces;
+    }
+
+    public int getAllPieceCount() {
+        return pieces.size();
+    }
+
+    public int whitePieceCount() {
+        for (int i = 0; i < pieces.size(); i++) {
+            Piece p = pieces.get(i);
+            if (p.isWhite()) {
+                whitePieceCount += 1;
+            }
+        }
+        return whitePieceCount;
+    }
+
+    public int blackPieceCount() {
+        for (int i = 0; i < pieces.size(); i++) {
+            Piece p = pieces.get(i);
+            if (p.isBlack()) {
+                blackPieceCount += 1;
+            }
+        }
+        return blackPieceCount;
     }
 
     public byte getPawnCount() {
@@ -36,13 +68,13 @@ public class Board {
 
     public void initialize() {
 
-           board =  StringUtil.appendNewLine("RNBQKBNR")+  
-                  StringUtil.appendNewLine("PPPPPPPP")  
-                + StringUtil.appendNewLine("........")   
-                + StringUtil.appendNewLine("........")  
-                + StringUtil.appendNewLine("........")  
-                + StringUtil.appendNewLine("........") 
-                + StringUtil.appendNewLine("pppppppp") 
+        board = StringUtil.appendNewLine("RNBQKBNR")
+                + StringUtil.appendNewLine("PPPPPPPP")
+                + StringUtil.appendNewLine("........")
+                + StringUtil.appendNewLine("........")
+                + StringUtil.appendNewLine("........")
+                + StringUtil.appendNewLine("........")
+                + StringUtil.appendNewLine("pppppppp")
                 + StringUtil.appendNewLine("rnbqkbnr");
 
     }

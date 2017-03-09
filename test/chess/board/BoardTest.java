@@ -1,6 +1,7 @@
 package chess.board;
 
 import chess.pieces.Pawn;
+import chess.pieces.Piece;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -61,7 +62,6 @@ public class BoardTest {
         System.out.println(instance.printBoard());
     }
 
-    
     public void testInitBoard() {
 
         board.initialize();
@@ -76,9 +76,23 @@ public class BoardTest {
                 + StringUtil.appendNewLine(blankRank)
                 + StringUtil.appendNewLine(blankRank)
                 + StringUtil.appendNewLine(secondRank)
-                +StringUtil.appendNewLine("rnbqkbnr")
+                + StringUtil.appendNewLine("rnbqkbnr")
                 + blankRank, instance.printBoard());
     }
 
-  
+    @Test
+    public void testAddPiece() {
+          Piece whitePawn = Piece.createWhitePawn();
+          board.addPiece(whitePawn);
+          assertEquals(1, board.getAllPieceCount());
+          Piece whiteKing = Piece.createWhiteKing();
+          board.addPiece(whiteKing);
+          assertEquals(2, board.getAllPieceCount());
+          assertTrue(whiteKing.isWhite());
+          
+          assertEquals(2, board.whitePieceCount());
+          assertEquals(0, board.blackPieceCount());
+          
+    }
+
 }
