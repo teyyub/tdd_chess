@@ -17,9 +17,9 @@ public class Piece   {
         WHITE, BLACK, NullColor
     };
 
-//    public enum Type {
-//        PAWN, ROOK, BISHOP, KNIGHT, QUEEN, KING, NOPIECE;
-//    };
+    public enum Type {
+        PAWN, ROOK, BISHOP, KNIGHT, QUEEN, KING, NOPIECE;
+    };
 
 //    Map<Piece.Type, Integer> values = null;
  
@@ -61,17 +61,17 @@ public class Piece   {
     }
     
     
-//    public static Piece createPiece(Colors c, Type p) {
-//        return new Piece(c, p);
-//    }
+    public static Piece createPiece(Colors c, Type p) {
+        return new Piece(c, p);
+    }
 
-//    private Piece(Colors color, Type type) {
-////        if (type == Type.PAWN) {
-////            if (color == Colors.WHITE) {
-////                Pawn.createPawn(WHITE_COLOR);
-////            }
-////        }
-//    }
+    private Piece(Colors color, Type type) {
+//        if (type == Type.PAWN) {
+//            if (color == Colors.WHITE) {
+//                Pawn.createPawn(WHITE_COLOR);
+//            }
+//        }
+    }
 //    private Piece(Colors c, Type p) {
 //        if (null != c) {
 //            switch (c) {
