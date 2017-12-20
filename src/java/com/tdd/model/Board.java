@@ -17,14 +17,14 @@ public class Board {
 //    private int pieces = 0;
     private static final byte BOARD_SIZE = 8;
 //    private String square[][] = new String[8][8];
-    private Piece board[][] = new Piece[BOARD_SIZE][BOARD_SIZE];
+    private final Piece board[][] = new Piece[BOARD_SIZE][BOARD_SIZE];
     private Map<String, Integer> fileValue = null;
     private Map<Integer, String> rankValue = null;
     private static final Map<Integer, String> ranksValue=null;
     
-    private List<String> kingPassibleMoves = null;
+    private final List<String> kingPassibleMoves = null;
     private Map<Piece, String> piecesLocation = null;
-    private Map<String, Piece> piecesLocationInverse = null;
+    private final Map<String, Piece> piecesLocationInverse = null;
 
     public Board() {
        
